@@ -118,7 +118,67 @@
 
             </section>
             <section id="order"></section>
-            <section id="staff"></section>
+            <section id="staff">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h2>Staff Management</h2>
+                            <form id="staff-form">
+                                <div class="form-group">
+                                    <label for="itemId">ID</label>
+                                    <input type="text" class="form-control" id="staffId" placeholder="Enter Item ID">
+                                </div>
+                                <label for="dropdown">Select Job Category</label>
+                                <div id="dropdownStaff">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2Staff" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Job Category
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                        <li><button class="dropdown-item" type="button">Kitchen</button></li>
+                                        <li><button class="dropdown-item" type="button">Servant</button></li>
+                                        <li><button class="dropdown-item" type="button">User</button></li>
+                                        <li><button class="dropdown-item" type="button">Office</button></li>
+                                    </ul>
+                                </div>
+                                <div class="form-group">
+                                    <label for="staffName">Item Name</label>
+                                    <input type="text" class="form-control" id="staffName" placeholder="Enter Item Name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="NIC">QTY</label>
+                                    <input type="text" class="form-control" id="NIC" placeholder="Enter Item QTY">
+                                </div>
+                                <div class="form-group">
+                                    <label for="dob">Birthday</label>
+                                    <input type="date" class="form-control" id="dob" placeholder="Enter Item Unit Price">
+                                </div>
+                                <button type="submit" id="staff-submit" class="btn btn-primary">Submit</button>
+                                <button type="button" id="staff-update" class="btn btn-primary">Update</button>
+                                <button type="button" id="staff-delete" class="btn btn-primary">Delete</button>
+                                <button type="button" id="staff-reset" class="btn btn-primary">Reset</button>
+                            </form>
+                        </div>
+                        <div class="col-md-6">
+                            <!-- Table for student data -->
+                            <h2>Items</h2>
+                            <table id="staff-table" class="table">
+                                <thead>
+                                <tr>
+                                    <th scope="col">Staff ID</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Job Category</th>
+                                    <th scope="col">Birthday</th>
+                                    <th scope="col">Contact No</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <!-- Table body content will be added dynamically -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <section id="customer"></section>
             <section id="inventory"></section>
             <section id="reports"></section>
