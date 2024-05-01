@@ -55,7 +55,67 @@
         <main>
 
             <section id="dashboard"></section>
-            <section id="items"></section>
+            <section id="items">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h2>Items Management</h2>
+                            <form id="item-form">
+                                <div class="form-group">
+                                    <label for="itemId">ID</label>
+                                    <input type="text" class="form-control" id="itemId" placeholder="Enter Item ID">
+                                </div>
+                                <label for="dropdown">Select Item Category</label>
+                                <div id="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Item Category
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                        <li><button class="dropdown-item" type="button">Food</button></li>
+                                        <li><button class="dropdown-item" type="button">Beverage</button></li>
+                                        <li><button class="dropdown-item" type="button">Beers</button></li>
+                                        <li><button class="dropdown-item" type="button">Soups</button></li>
+                                    </ul>
+                                </div>
+                                <div class="form-group">
+                                    <label for="itemName">Item Name</label>
+                                    <input type="text" class="form-control" id="itemName" placeholder="Enter Item Name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="itemQTY">QTY</label>
+                                    <input type="text" class="form-control" id="itemQTY" placeholder="Enter Item QTY">
+                                </div>
+                                <div class="form-group">
+                                    <label for="itemUnitPrice">Unit Price</label>
+                                    <input type="text" class="form-control" id="itemUnitPrice" placeholder="Enter Item Unit Price">
+                                </div>
+                                <button type="submit" id="student-submit" class="btn btn-primary">Submit</button>
+                                <button type="button" class="btn btn-primary">Update</button>
+                                <button type="button" class="btn btn-primary">Delete</button>
+                                <button type="button" class="btn btn-primary">Reset</button>
+                            </form>
+                        </div>
+                        <div class="col-md-6">
+                            <!-- Table for student data -->
+                            <h2>Student List</h2>
+                            <table id="student-table" class="table">
+                                <thead>
+                                <tr>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">First Name</th>
+                                    <th scope="col">Last Name</th>
+                                    <th scope="col">Address</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <!-- Table body content will be added dynamically -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
             <section id="order"></section>
             <section id="staff"></section>
             <section id="customer"></section>
