@@ -16,3 +16,11 @@
     box-shadow: 5px 0px 5px rgba(0, 0, 0, 0.2);
     position: relative;
 }
+header {
+
+}
+.navbar {
+    background-image: linear-gradient(to bottom right, rgba(255, 0, 0, 0.4), rgba(133, 133, 0, 0.4));
+    font-family: "Samsung Sans", serif;
+    font-weight: bold;
+}
