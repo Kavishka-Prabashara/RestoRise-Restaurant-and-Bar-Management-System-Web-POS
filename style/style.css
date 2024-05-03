@@ -5,6 +5,7 @@
 }
 body {
     background-color: #212529;
+
 }
 #staff {
     background-color: #e0e0e0;
@@ -43,3 +44,19 @@ header {
 .full-width {
     grid-column: 1 / span 3; /* Spans all 3 columns */
 }
+
+     /* Custom CSS for specific styling */
+ .dashboard-header {
+     text-align: center;
+     padding: 20px;
+     background-color: #007bff;
+     color: white;
+ }
+.sales-stats, .order-list, .menu, .staff {
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+}
+
