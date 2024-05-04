@@ -3,10 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-/*body {
-    background-color: #212529;
 
-}*/
 #staff {
     background-color: #e0e0e0;
     border-radius: 15px;
@@ -24,9 +21,11 @@ header {
 
 }
 .navbar {
-    background-image: linear-gradient(to bottom right, rgba(255, 0, 0, 0.4), rgba(133, 133, 0, 0.4));
+    background-color: yellow;
     font-family: "Samsung Sans", serif;
     font-weight: bold;
+    border: 2px solid rgba(0, 0, 0, 0.2); /* Add border */
+    border-radius: 10px; /* Add border-radius */
 }
 .grid-container {
     display: grid;
@@ -63,4 +62,7 @@ header {
     color: black;
     font-weight: bold;
     font-family: "Samsung Sans", serif;
+}
+#logoID {
+    width: 200px;
 }
