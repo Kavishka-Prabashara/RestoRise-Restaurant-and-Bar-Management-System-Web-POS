@@ -1,3 +1,5 @@
+import ItemModel from "../model/ItemModel";
+import items from "../db/db.js";
 $("#student-submit").on('click', () => {
 
     var supplierId = $('#supplierId').val();
