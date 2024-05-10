@@ -55,10 +55,10 @@
 <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ </>Header> ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
 
 <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ <Main> ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
-        <main>
+
 
 <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ <Dashboard> ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
-            <section id="dashboard-section" style="display: none;">
+            <section id="dashboard-section">
                 <div class="container">
                     <div class="row">
                         <div class="col-12 text-center <!--bg-primary--> text-white py-4">
@@ -123,7 +123,7 @@
 <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ </>Dashboard> ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
 
 <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ <Items> ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
-            <section id="items-section" style="display: none;">
+            <section id="items-section">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6">
@@ -204,7 +204,7 @@
 <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ </>Items> ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
 
 <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ <Order> ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
-            <section id="order-section" style="display: none;">
+            <section id="order-section" >
                 <div class="grid-container">
                     <div class="item">
                         <div class="form-group">
@@ -341,7 +341,7 @@
 <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ </>Order> ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
 
 <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ <Staff> ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
-            <section id="staff-section" style="display: none;">
+            <section id="staff-section">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6">
@@ -413,7 +413,7 @@
 <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ </>Staff> ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
 
 <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ <Customer> ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
-            <section id="customer-section" style="display: none;">
+            <section id="customer-section">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6">
@@ -467,7 +467,7 @@
             </section>
 <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ </>Customer> ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
 
-        </main>
+
 
 <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ </Main> ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
 
@@ -480,9 +480,55 @@
 <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ </Footer> ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
 
 <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ <Script> ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
-        <script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
 
-        </script>
-        <script src="lib/jquery.js"></script>
+    $(document).ready(function(){
+        $('#dashboard-section').css({display: 'block'});
+        $('#items-section').css({display: 'none'});
+        $('#order-section').css({display: 'none'});
+        $('#customer-section').css({display: 'none'});
+        $('#staff-section').css({display: 'none'});
+
+        $('#nav-dashboard').on('click', () => {
+            $('#dashboard-section').css({display: 'block'});
+            $('#items-section').css({display: 'none'});
+            $('#order-section').css({display: 'none'});
+            $('#customer-section').css({display: 'none'});
+            $('#staff-section').css({display: 'none'});
+        });
+        $('#nav-item').on('click', () => {
+            $('#dashboard-section').css({display: 'none'});
+            $('#items-section').css({display: 'block'});
+            $('#order-section').css({display: 'none'});
+            $('#customer-section').css({display: 'none'});
+            $('#staff-section').css({display: 'none'});
+        });
+        $('#nav-customer').on('click', () => {
+            $('#dashboard-section').css({display: 'none'});
+            $('#items-section').css({display: 'none'});
+            $('#order-section').css({display: 'none'});
+            $('#customer-section').css({display: 'block'});
+            $('#staff-section').css({display: 'none'});
+        });
+
+        $('#nav-order').on('click', () => {
+            $('#dashboard-section').css({display: 'none'});
+            $('#items-section').css({display: 'none'});
+            $('#order-section').css({display: 'block'});
+            $('#customer-section').css({display: 'none'});
+            $('#staff-section').css({display: 'none'});
+        });
+
+        $('#nav-staff').on('click', () => {
+            $('#dashboard-section').css({display: 'none'});
+            $('#items-section').css({display: 'none'});
+            $('#order-section').css({display: 'none'});
+            $('#customer-section').css({display: 'none'});
+            $('#staff-section').css({display: 'block'});
+        });
+
+    });
+</script>
     </body>
 </html>
