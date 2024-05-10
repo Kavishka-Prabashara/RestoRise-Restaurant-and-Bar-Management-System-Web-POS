@@ -1,5 +1,5 @@
-import ItemModel from "../model/ItemModel";
-import {items} from "../db/db.js";
+import ItemModel from "../model/ItemModel.js";
+import { items } from "../db/db.js";
 
 var recordIndex;
 
@@ -15,23 +15,20 @@ $("#item-submit").on('click', () => {
     var suppliedDate = $('#suppliedDate').val();
 
     let item = new ItemModel(
-        supplierId, supplierName, suppliedItemCategory , itemId , itemName , itemQTY , unitPrice , suppliedDate
+        supplierId, supplierName, suppliedItemCategory, itemId, itemName, itemQTY, unitPrice, suppliedDate
     );
 
-    // push to the array
     items.push(item);
 
     loadTable();
     $("#item-reset").click();
 });
+
 function loadTable() {
-    // Get the table body
     var tbody = $('#items-table tbody');
 
-    // Clear existing rows
     tbody.empty();
 
-    // Loop through each item and generate table rows
     items.forEach(item => {
         var row = `<tr>
                         <td>${item.supplierId}</td>
@@ -46,5 +43,3 @@ function loadTable() {
         tbody.append(row);
     });
 }
-
-
