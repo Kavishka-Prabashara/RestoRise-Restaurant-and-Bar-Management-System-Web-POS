@@ -58,7 +58,7 @@
         <main>
 
 <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ <Dashboard> ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
-            <section id="dashboard" style="display: none;">
+            <section id="dashboard-section" style="display: none;">
                 <div class="container">
                     <div class="row">
                         <div class="col-12 text-center <!--bg-primary--> text-white py-4">
@@ -123,7 +123,7 @@
 <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ </>Dashboard> ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
 
 <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ <Items> ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
-            <section id="items" style="display: none;">
+            <section id="items-section" style="display: none;">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6">
@@ -204,7 +204,7 @@
 <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ </>Items> ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
 
 <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ <Order> ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
-            <section id="order" style="display: none;">
+            <section id="order-section" style="display: none;">
                 <div class="grid-container">
                     <div class="item">
                         <div class="form-group">
@@ -341,7 +341,7 @@
 <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ </>Order> ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
 
 <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ <Staff> ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
-            <section id="staff" style="display: none;">
+            <section id="staff-section" style="display: none;">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6">
@@ -413,7 +413,7 @@
 <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ </>Staff> ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
 
 <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ <Customer> ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
-            <section id="customer" style="display: none;">
+            <section id="customer-section" style="display: none;">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6">
@@ -481,33 +481,7 @@
 
 <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ <Script> ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
         <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                // Initial setup
-                showSection('dashboard');
 
-                // Add click event listeners to navigation links
-                const navLinks = document.querySelectorAll('.nav-link');
-                navLinks.forEach(link => {
-                    link.addEventListener('click', function(event) {
-                        event.preventDefault();
-                        const sectionId = this.getAttribute('data-section');
-                        showSection(sectionId);
-                    });
-                });
-            });
-            function showSection(sectionId) {
-                // Hide all sections
-                const sections = document.querySelectorAll('main > div');
-                sections.forEach(section => {
-                    section.style.display = 'none';
-                });
-
-                // Show the selected section
-                const selectedSection = document.getElementById(sectionId);
-                if (selectedSection) {
-                    selectedSection.style.display = 'block';
-                }
-            }
         </script>
         <script src="lib/jquery.js"></script>
     </body>
