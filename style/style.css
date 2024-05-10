@@ -34,11 +34,6 @@ header {
     gap: 10px;
 }
 
-.item {
-    background-color: lightblue;
-    padding: 20px;
-    text-align: center;
-}
 
 .full-width {
     grid-column: 1 / span 3; /* Spans all 3 columns */
@@ -66,3 +61,4 @@ header {
 #logoID {
     width: 200px;
 }
+
