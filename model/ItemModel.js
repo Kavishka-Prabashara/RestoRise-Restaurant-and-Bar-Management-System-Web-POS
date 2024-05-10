@@ -1,71 +1,61 @@
 export default class ItemModel {
-
-/*---------------------------------<Constructor>---------------------------------*/
-    constructor(supplierID, supplierName , suppliedItemCategory , itemID , itemName , suppliedQTY , itemUnitPrice , suppliedDate) {
-        this.supplierID = supplierID ;
-        this.supplierName = supplierName ;
-        this.suppliedItemCategory = suppliedItemCategory ;
-        this.itemID = itemID ;
-        this.itemName = itemName ;
-        this.suppliedQTY = suppliedQTY ;
-        this.itemUnitPrice = itemUnitPrice ;
-        this.suppliedDate = suppliedDate ;
-    }
-/*---------------------------------</Constructor>---------------------------------*/
-
-/*---------------------------------<Getters>---------------------------------*/
-    get itemSupplierID() {
-        return this.supplierID;
-    }
-    get itemSupplierName() {
-        return this.supplierName;
-    }
-    get itemSuppliedItemCategory() {
-        return this.suppliedItemCategory;
-    }
-    get itemIemID() {
-        return this.itemID;
-    }
-    get itemItemName() {
-        return this.itemName;
-    }
-    get itemSuppliedQTY() {
-        return this.suppliedQTY;
-    }
-    get itemItemUnitPrice() {
-        return this.itemUnitPrice;
-    }
-    get itemSuppliedDate() {
-        return this.suppliedDate;
+    constructor(supplierId, supplierName, itemCategory, itemId, itemName, itemQTY, itemUnitPrice, suppliedDate) {
+        this._supplierId = supplierId;
+        this._supplierName = supplierName;
+        this._itemCategory = itemCategory;
+        this._itemId = itemId;
+        this._itemName = itemName;
+        this._itemQTY = itemQTY;
+        this._itemUnitPrice = itemUnitPrice;
+        this._suppliedDate = suppliedDate;
     }
 
-/*---------------------------------</Getters>---------------------------------*/
-
-/*---------------------------------<Setters>---------------------------------*/
-
-    set itemSupplierID(address) {
-        this._address=address;
+    get supplierId() {
+        return this._supplierId;
     }
-    set itemSupplierName(program) {
-        this._program=program;
+    get supplierName() {
+        return this._supplierName;
     }
-    set itemSuppliedItemCategory(program) {
-        this._program=program;
+    get itemCategory() {
+        return this._itemCategory;
     }
-    set itemItemID(program) {
-        this._program=program;
+    get itemId() {
+        return this._itemId;
     }
-    set itemItemName(program) {
-        this._program=program;
+    get itemName() {
+        return this._itemName;
     }
-    set itemSuppliedQTY(program) {
-        this._program=program;
+    get itemQTY() {
+        return this._itemQTY;
     }
-    set itemItemUnitPrice(program) {
-        this._program=program;
+    get itemUnitPrice() {
+        return this._itemUnitPrice;
     }
-    set itemSuppliedDate(program) {
-        this._program=program;
+    get suppliedDate() {
+        return this._suppliedDate;
     }
-/*---------------------------------</Setters>---------------------------------*/
+    set supplierId(supplierId) {
+        this._supplierId = supplierId;
+    }
+    set supplierName(supplierName) {
+        this._supplierName = supplierName;
+    }
+    set itemCategory(itemCategory) {
+        this._itemCategory = itemCategory;
+    }
+    set itemId(itemId) {
+        this._itemId = itemId;
+    }
+    set itemName(itemName) {
+        this._itemName = itemName;
+    }
+    set itemQTY(itemQTY) {
+        this._itemQTY = itemQTY;
+    }
+    set itemUnitPrice(itemUnitPrice) {
+        this._itemUnitPrice = itemUnitPrice;
+    }
+    set suppliedDate(suppliedDate) {
+        this._suppliedDate = suppliedDate;
+    }
 }
