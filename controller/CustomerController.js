@@ -5,9 +5,9 @@ $("#customer-submit").on('click', () => {
     var customerId = $('#customerId').val();
     var customerName = $('#customerName').val();
     var customerNIC = $('#customerNIC').val();
-    var customerControlNo = $('#customerControlNo').val();
+    var customerContactNo = $('#customerContactNo').val();
 
-    let customer = new CustomerModel(customerId , customerName , customerNIC , customerControlNo);
+    let customer = new CustomerModel(customerId , customerName , customerNIC , customerContactNo);
 
     customers.push(customer);
 
@@ -25,7 +25,7 @@ $("#customer-submit").on('click', () => {
                         <td>${customer.customerID}</td>
                         <td>${customer.customerName}</td>
                         <td>${customer.customerNIC}</td>
-                        <td>${customer.customerControlNo}</td>                 
+                        <td>${customer.customerContactNo}</td>                 
                     </tr>`;
             tbody.append(row);
         });
