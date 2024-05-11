@@ -1,4 +1,4 @@
  export var items = [];
  export var customers = [];
- export var staff = [];
+ export var staffs = [];
  export var orders = [];
