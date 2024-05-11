@@ -4,7 +4,6 @@ import { items } from "../db/db.js";
 var recordIndex;
 
 $("#item-submit").on('click', () => {
-
     var supplierId = $('#supplierId').val();
     var supplierName = $('#supplierName').val();
     var suppliedItemCategory = $('#dropdownItemCategory').val();
@@ -21,10 +20,11 @@ $("#item-submit").on('click', () => {
     items.push(item);
 
     loadTable();
-    $("#item-reset").click();
+
 });
 
 function loadTable() {
+
     var tbody = $('#items-table tbody');
 
     tbody.empty();
