@@ -7,8 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>RestoRise-Restaurant-and-Bar-Management-System-Web-POS</title>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
-    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-XWeTKjSABPeAb/WMke77Gf5vJmyu9Bv2BfEorXUI9N1hDFRPIRbcFOFgBw4cBpFnd1kpUfybr/4EZlMv0am/Gw==" crossorigin="anonymous" referrerpolicy="no-referrer" />-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-XWeTKjSABPeAb/WMke77Gf5vJmyu9Bv2BfEorXUI9N1hDFRPIRbcFOFgBw4cBpFnd1kpUfybr/4EZlMv0am/Gw==" crossorigin="anonymous" referrerpolicy="no-referrer" />-->
     <link rel="stylesheet" href="style/normalize.css">
     <link rel="stylesheet" href="style/style.css">
 
@@ -51,7 +51,6 @@
                     </div>
                 </div>
             </nav>
-
         </header>
 
 <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ </>Header> ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
@@ -61,7 +60,7 @@
 
 <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ <Dashboard> ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
             <section id="dashboard-section">
-                <div class="container">
+                <section class="container">
                     <div class="row">
                         <div class="col-12 text-center <!--bg-primary--> text-white py-4">
                             <h1 id="dashboardTitle">RestoRise Restaurant & Bar</h1>
@@ -119,17 +118,17 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </section>
 
             </section>
 <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ </>Dashboard> ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
 
 <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ <Items> ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
             <section id="items-section">
-                <div class="container">
+                <h2>Items Management</h2>
+                <section class="container">
                     <div class="row">
                         <div class="col-md-6">
-                            <h2>Items Management</h2>
                             <form id="item-form">
                                 <div class="form-group">
                                     <label for="supplierId">Supplier ID</label>
@@ -172,7 +171,7 @@
                                     <label for="suppliedDate">Supplied Date</label>
                                     <input type="date" class="form-control" id="suppliedDate" placeholder="Enter Supplied Date">
                                 </div>
-                                <button type="submit" id="item-submit" class="btn btn-primary">Submit</button>
+                                <button type="button" id="item-submit" class="btn btn-primary">Submit</button>
                                 <button type="button" id="item-update" class="btn btn-primary">Update</button>
                                 <button type="button" id="item-delete" class="btn btn-primary">Delete</button>
                                 <button type="button" id="item-reset" class="btn btn-primary">Reset</button>
@@ -200,7 +199,7 @@
                             </table>
                         </div>
                     </div>
-                </div>
+                </section>
 
             </section>
 <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ </>Items> ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
@@ -338,7 +337,7 @@
                         <!-- Table body content will be added dynamically -->
                         </tbody>
                     </table></div>
-                </div>
+
 
             </section>
 <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ </>Order> ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
@@ -352,7 +351,7 @@
                             <form id="staff-form">
                                 <div class="form-group">
                                     <label for="itemId">ID</label>
-                                    <input type="text" class="form-control" id="staffId" placeholder="Enter Item ID">
+                                    <label for="staffId"></label><input type="text" class="form-control" id="staffId" placeholder="Enter Item ID">
                                 </div>
 
                                 <div class="form-group">
@@ -381,10 +380,10 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="staffNIC">Contact No</label>
-                                    <input type="text" class="form-control" id="staffContactNo" placeholder="Enter Contact No">
+                                    <label for="staffContactNo"></label><input type="text" class="form-control" id="staffContactNo" placeholder="Enter Contact No">
                                 </div>
 
-                                <button type="submit" id="staff-submit" class="btn btn-primary">Submit</button>
+                                <button type="button" id="staff-submit" class="btn btn-primary">Submit</button>
                                 <button type="button" id="staff-update" class="btn btn-primary">Update</button>
                                 <button type="button" id="staff-delete" class="btn btn-primary">Delete</button>
                                 <button type="button" id="staff-reset" class="btn btn-primary">Reset</button>
@@ -424,7 +423,7 @@
                             <form id="customer-form">
                                 <div class="form-group">
                                     <label for="itemId">Customer ID</label>
-                                    <input type="text" class="form-control" id="customerId" placeholder="Customer ID">
+                                    <label for="customerId"></label><input type="text" class="form-control" id="customerId" placeholder="Customer ID">
                                 </div>
 
                                 <div class="form-group">
@@ -441,7 +440,7 @@
                                 </div>
 
 
-                                <button type="submit" id="customer-submit" class="btn btn-primary">Submit</button>
+                                <button type="button" id="customer-submit" class="btn btn-primary">Submit</button>
                                 <button type="button" id="customer-update" class="btn btn-primary">Update</button>
                                 <button type="button" id="customer-delete" class="btn btn-primary">Delete</button>
                                 <button type="button" id="customer-reset" class="btn btn-primary">Reset</button>
@@ -486,5 +485,6 @@
             <script src="assets/lib/jquery.js"></script>
             <script src="script/script.js"></script>
             <script type="module" src="controller/ItemController.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
