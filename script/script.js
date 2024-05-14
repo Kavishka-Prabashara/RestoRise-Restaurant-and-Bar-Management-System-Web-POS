@@ -1,6 +1,7 @@
     $(document).ready(function(){
 
-    $('#dashboard-section').css({display: 'block'});
+    /*$('#dashboard-section').css({display: 'block'})*/;
+        $('#items-section').css({display: 'block'});
 
     $('#nav-dashboard').on('click', () => {
     $('#dashboard-section').css({display: 'block'});
