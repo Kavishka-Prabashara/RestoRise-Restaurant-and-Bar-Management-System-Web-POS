@@ -1,7 +1,10 @@
     $(document).ready(function(){
 
     $('#dashboard-section').css({display: 'block'});
-        $('#items-section').css({display: 'block'});
+        $('#items-section').css({display: 'none'});
+        $('#order-section').css({display: 'none'});
+        $('#customer-section').css({display: 'none'});
+        $('#staff-section').css({display: 'none'});
 
     $('#nav-dashboard').on('click', () => {
     $('#dashboard-section').css({display: 'block'});
