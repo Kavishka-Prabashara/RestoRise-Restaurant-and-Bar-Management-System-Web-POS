@@ -42,4 +42,16 @@ function loadTable() {
                     </tr>`;
         tbody.append(row);
     });
+    const dropdownButton = document.getElementById('dropdownItemCategory');
+// Get all dropdown items
+    const dropdownItems = document.querySelectorAll('.dropdown-item');
+
+// Loop through each dropdown item
+    dropdownItems.forEach(item => {
+        // Add click event listener
+        item.addEventListener('click', function() {
+            // Set the button text to the clicked item's text
+            dropdownButton.textContent = this.textContent;
+        });
+    });
 }
