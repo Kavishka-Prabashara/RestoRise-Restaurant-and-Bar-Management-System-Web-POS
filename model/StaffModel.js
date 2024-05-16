@@ -1,4 +1,4 @@
-export default class CustomerModel {
+export default class StaffModel {
     constructor(staffID , staffName , staffNIC , staffDob , staffContactNo) {
         this._staffID = staffID ;
         this._staffName = staffName ;
