@@ -48,5 +48,9 @@
             $('.job-category').on('click', function() {
                 $('#jobCategory').text($(this).text());
             });
+
+             $('.item-category').on('click', function() {
+                $('#dropdownItemCategory').text($(this).text());
+            });
 });
 
