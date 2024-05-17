@@ -8,10 +8,11 @@ $("#staff-submit").on('click', () => {
     var staffName = $('#staffName').val();
     var staffNIC = $('#staffNIC').val();
     var staffDob = $('#staffDob').val();
+    var jobCategory = $('#jobCategory').text();
     var staffContactNo = $('#staffContactNo').val();
 
     let staff = new StaffModel(
-        staffId , staffName , staffNIC , staffDob , staffContactNo
+        staffId , staffName , staffNIC , staffDob , jobCategory , staffContactNo
     );
 
     staffs.push(staff);
@@ -19,6 +20,8 @@ $("#staff-submit").on('click', () => {
     loadTable();
 
 });
+
+
 
 function loadTable() {
 
@@ -28,11 +31,12 @@ function loadTable() {
 
     staffs.forEach(staff => {
         var row = `<tr>
-                        <td>${item.staffID}</td>
-                        <td>${item.staffName}</td>
-                        <td>${item.staffNIC}</td>
-                        <td>${item.staffDob}</td>
-                        <td>${item.staffContactNo}</td>
+                        <td>${staff.staffID}</td>
+                        <td>${staff.staffName}</td>
+                        <td>${staff.staffNIC}</td>
+                        <td>${staff.staffDob}</td>
+                        <td>${staff.jobCategory}</td>
+                        <td>${staff.staffContactNo}</td>
                     </tr>`;
         tbody.append(row);
     });
