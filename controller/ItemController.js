@@ -6,7 +6,7 @@ var recordIndex;
 $("#item-submit").on('click', () => {
     var supplierId = $('#supplierId').val();
     var supplierName = $('#supplierName').val();
-    var suppliedItemCategory = $('#dropdownItemCategory').val();
+    var suppliedItemCategory = $('#dropdownItemCategory').text();
     var itemId = $('#itemId').val();
     var itemName = $('#itemName').val();
     var itemQTY = $('#itemQTY').val();
