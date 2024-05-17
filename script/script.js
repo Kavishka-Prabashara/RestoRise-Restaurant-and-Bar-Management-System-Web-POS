@@ -44,4 +44,9 @@
     $('#staff-section').css({display: 'block'});
 });
 
+            // Listen for click events on dropdown items and set the text of the button
+            $('.job-category').on('click', function() {
+                $('#jobCategory').text($(this).text());
+            });
 });
+
