@@ -10,6 +10,8 @@
         $('#staff-section').css({display: 'none'});
 
     $('#nav-dashboard').on('click', () => {
+        $('#login-section').css({display: 'none'});
+        $('#signUp-section').css({display: 'none'});
     $('#dashboard-section').css({display: 'block'});
     $('#items-section').css({display: 'none'});
     $('#order-section').css({display: 'none'});
@@ -17,6 +19,8 @@
     $('#staff-section').css({display: 'none'});
 });
     $('#nav-item').on('click', () => {
+        $('#login-section').css({display: 'none'});
+        $('#signUp-section').css({display: 'none'});
     $('#dashboard-section').css({display: 'none'});
     $('#items-section').css({display: 'block'});
     $('#order-section').css({display: 'none'});
@@ -24,6 +28,8 @@
     $('#staff-section').css({display: 'none'});
 });
     $('#nav-customer').on('click', () => {
+        $('#login-section').css({display: 'none'});
+        $('#signUp-section').css({display: 'none'});
     $('#dashboard-section').css({display: 'none'});
     $('#items-section').css({display: 'none'});
     $('#order-section').css({display: 'none'});
@@ -32,6 +38,8 @@
 });
 
     $('#nav-order').on('click', () => {
+        $('#login-section').css({display: 'none'});
+        $('#signUp-section').css({display: 'none'});
     $('#dashboard-section').css({display: 'none'});
     $('#items-section').css({display: 'none'});
     $('#order-section').css({display: 'block'});
@@ -40,6 +48,8 @@
 });
 
     $('#nav-staff').on('click', () => {
+        $('#login-section').css({display: 'none'});
+        $('#signUp-section').css({display: 'none'});
     $('#dashboard-section').css({display: 'none'});
     $('#items-section').css({display: 'none'});
     $('#order-section').css({display: 'none'});
