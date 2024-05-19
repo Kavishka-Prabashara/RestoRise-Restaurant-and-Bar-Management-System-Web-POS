@@ -10,7 +10,8 @@
         $('#staff-section').css({display: 'none'});
 
         $('#loginSection-register').on('click', () => {
-            $('#login-section').css({display: 'none'});
+
+            $('#login-Section').css({display: 'none'});
             $('#signUp-section').css({display: 'block'});
             $('#dashboard-section').css({display: 'none'});
             $('#items-section').css({display: 'none'});
