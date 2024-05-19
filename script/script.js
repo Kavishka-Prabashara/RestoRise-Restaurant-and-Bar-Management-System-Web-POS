@@ -1,6 +1,7 @@
     $(document).ready(function(){
 
         $('#login-section').css({display: 'block'});
+        $('#signUp-section').css({display: 'none'});
         $('#navigation-bar').css({display: 'none'});
         $('#dashboard-section').css({display: 'none'});
         $('#items-section').css({display: 'none'});
