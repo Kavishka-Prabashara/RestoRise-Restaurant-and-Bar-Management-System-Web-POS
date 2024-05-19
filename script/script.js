@@ -20,6 +20,18 @@
             $('#staff-section').css({display: 'none'});
         });
 
+        $('#loginSection-button').on('click', () => {
+
+            $('#login-Section').css({display: 'none'});
+            $('#signUp-section').css({display: 'none'});
+            $('#dashboard-section').css({display: 'block'});
+            $('#navigation-bar').css({display: 'block'});
+            $('#items-section').css({display: 'none'});
+            $('#order-section').css({display: 'none'});
+            $('#customer-section').css({display: 'none'});
+            $('#staff-section').css({display: 'none'});
+        });
+
     $('#nav-dashboard').on('click', () => {
         $('#login-section').css({display: 'none'});
         $('#signUp-section').css({display: 'none'});
