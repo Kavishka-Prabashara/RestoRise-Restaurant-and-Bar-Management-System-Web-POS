@@ -20,7 +20,7 @@
             $('#staff-section').css({display: 'none'});
         });
 
-        $('#loginSection-button').on('click', () => {
+        $('#loginSection-btnLogin').on('click', () => {
 
             $('#login-Section').css({display: 'none'});
             $('#signUp-section').css({display: 'none'});
