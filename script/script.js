@@ -9,6 +9,16 @@
         $('#customer-section').css({display: 'none'});
         $('#staff-section').css({display: 'none'});
 
+        $('#loginSection-register').on('click', () => {
+            $('#login-section').css({display: 'none'});
+            $('#signUp-section').css({display: 'block'});
+            $('#dashboard-section').css({display: 'none'});
+            $('#items-section').css({display: 'none'});
+            $('#order-section').css({display: 'none'});
+            $('#customer-section').css({display: 'none'});
+            $('#staff-section').css({display: 'none'});
+        });
+
     $('#nav-dashboard').on('click', () => {
         $('#login-section').css({display: 'none'});
         $('#signUp-section').css({display: 'none'});
