@@ -1,6 +1,8 @@
     $(document).ready(function(){
 
-    $('#dashboard-section').css({display: 'block'});
+        $('#login-section').css({display: 'block'});
+        $('#navigation-bar').css({display: 'none'});
+        $('#dashboard-section').css({display: 'none'});
         $('#items-section').css({display: 'none'});
         $('#order-section').css({display: 'none'});
         $('#customer-section').css({display: 'none'});
