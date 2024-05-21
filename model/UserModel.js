@@ -23,13 +23,12 @@ export default class UserModel {
     get mobileNo() {
         return this._mobileNo;
     }
-    get confirmPassword() {
-        return this._confirmPassword;
-    }
     get password() {
         return this._password;
     }
-
+    get confirmPassword() {
+        return this._confirmPassword;
+    }
     set email(email) {
         this._email = email;
     }
