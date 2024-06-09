@@ -1,11 +1,11 @@
-export default class UserModel {
-    constructor(email, name, address, mobileNo, password , confirmPassword) {
+export default class LoginModel {
+    constructor(email, name, address, mobileNo, password, confirmPassword) {
         this._email = email;
-        this._name = name;
+        this._name = name;A
         this._address = address;
         this._mobileNo = mobileNo;
         this._password = password;
-        this.confirmPassword = confirmPassword ;
+        this._confirmPassword = confirmPassword;A
     }
 
     get email() {
@@ -23,12 +23,15 @@ export default class UserModel {
     get mobileNo() {
         return this._mobileNo;
     }
+
     get password() {
         return this._password;
     }
+
     get confirmPassword() {
         return this._confirmPassword;
     }
+
     set email(email) {
         this._email = email;
     }
@@ -44,9 +47,11 @@ export default class UserModel {
     set mobileNo(mobileNo) {
         this._mobileNo = mobileNo;
     }
+
     set password(password) {
         this._password = password;
     }
+
     set confirmPassword(confirmPassword) {
         this._confirmPassword = confirmPassword;
     }
