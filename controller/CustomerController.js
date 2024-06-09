@@ -12,6 +12,7 @@ $("#customer-submit").on('click', () => {
     customers.push(customer);
 
     loadTable();
+    alert("customer is saved")
 
 });
     function loadTable() {
