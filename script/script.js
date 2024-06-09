@@ -5,7 +5,7 @@
         $('#navigation-bar').css({display: 'none'});
         $('#dashboard-section').css({display: 'none'});
         $('#items-section').css({display: 'none'});
-        $('#order-section').css({display: 'none'});
+        $('#order-section').css({display: 'block'});
         $('#customer-section').css({display: 'none'});
         $('#staff-section').css({display: 'none'});
 
@@ -20,7 +20,7 @@
             $('#staff-section').css({display: 'none'});
         });
 
-        $('#loginSection-btnLogin').on('click', () => {
+/*        $('#loginSection-btnLogin').on('click', () => {
 
             $('#login-Section').css({display: 'none'});
             $('#signUp-section').css({display: 'none'});
@@ -30,7 +30,7 @@
             $('#order-section').css({display: 'none'});
             $('#customer-section').css({display: 'none'});
             $('#staff-section').css({display: 'none'});
-        });
+        });*/
 
     $('#nav-dashboard').on('click', () => {
         $('#login-section').css({display: 'none'});
@@ -79,6 +79,16 @@
     $('#customer-section').css({display: 'none'});
     $('#staff-section').css({display: 'block'});
 });
+        $('#btn-backOnAction').on('click', () => {
+
+            $('#login-Section').css({display: 'block'});
+            $('#signUp-section').css({display: 'none'});
+            $('#dashboard-section').css({display: 'none'});
+            $('#items-section').css({display: 'none'});
+            $('#order-section').css({display: 'none'});
+            $('#customer-section').css({display: 'none'});
+            $('#staff-section').css({display: 'none'});
+        });
 
             // Listen for click events on dropdown items and set the text of the button
             $('.job-category').on('click', function() {
@@ -88,5 +98,10 @@
              $('.item-category').on('click', function() {
                 $('#dropdownItemCategory').text($(this).text());
             });
+        document.addEventListener('DOMContentLoaded', () => {
+            const signUpForm = document.getElementById('signUp-section');
+            new SignUpController(signUpForm);
+        });
+
 });
 
