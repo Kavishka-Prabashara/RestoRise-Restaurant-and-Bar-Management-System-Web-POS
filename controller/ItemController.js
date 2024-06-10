@@ -21,6 +21,8 @@ $("#item-submit").on('click', () => {
     // Regex patterns
     var supplierIdPattern = /^SP\d{3}$/; // Pattern to match 'SP' followed by 3 digits
     var itemIdPattern = /^I\d{3}$/; // Pattern to match 'I' followed by 3 digits
+    var itemQTYPattern = /^\d+$/; // Pattern to match only digits
+    var itemUnitPricePattern = /^\d+$/; // Pattern to match only digits
 
     if (supplierId === "" || supplierName === "" || dropdownItemCategory === "Item Category" || itemId === "" || itemName === "" || itemQTY === "" || itemUnitPrice === "" || suppliedDate === "") {
         alert("All fields are required!");
@@ -32,6 +34,14 @@ $("#item-submit").on('click', () => {
     }
     if (!itemIdPattern.test(itemId)) {
         alert("Item ID must follow the format 'I001'!");
+        return;
+    }
+    if (!itemQTYPattern.test(itemQTY)) {
+        alert("Enter Valid QTY Inputs!");
+        return;
+    }
+    if (!itemUnitPricePattern.test(itemUnitPrice)) {
+        alert("Enter Valid Unit Price Inputs!");
         return;
     }
 
