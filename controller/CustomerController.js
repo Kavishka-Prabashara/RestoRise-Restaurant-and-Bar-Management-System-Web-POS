@@ -33,3 +33,48 @@ $("#customer-submit").on('click', () => {
             tbody.append(row);
         });
     }
+$("#customer-update").on('click', () => {
+    var customerId = $('#customerId').val();
+    var customerName = $('#customerName').val();
+    var customerNIC = $('#customerNIC').val();
+    var customerContactNo = $('#customerContactNo').val();
+
+
+    let customerObj = customers[recordIndex];
+    // let studentObj = {...students[recordIndex]}; // clone object
+    customerObj.id = customerId;
+    customerObj.cusName = customerName;
+    customerObj.cusNIC = customerNIC;
+    customerObj.cusContactNo = customerContactNo;
+
+
+
+    loadTable();
+    $("#customer-reset").click();
+});
+
+$("#customer-delete").on('click', () => {
+    customers.splice(recordIndex, 1);
+    loadTable();
+    $("#customer-reset").click();
+});
+
+$("#customer-tbl-tbody").on('click', 'tr', function() {
+    let index = $(this).index();
+    recordIndex = index;
+
+    console.log("index: ", index);
+
+    let id = $(this).find(".customer-id-value").text();
+    let cusName = $(this).find(".customer-cusName-value").text();
+    let cusNIC = $(this).find(".customer-cusNIC-value").text();
+    let cusContactNo = $(this).find(".customer-cusContactNo-value").text();
+
+
+
+    $("#customerId").val(id);
+    $("#customerName").val(cusName);
+    $("#customerNIC").val(cusNIC);
+    $("#customerContactNo").val(cusContactNo);
+
+})
