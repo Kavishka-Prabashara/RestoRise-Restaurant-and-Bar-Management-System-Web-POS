@@ -434,13 +434,12 @@
                             <h2>Staff Management</h2>
                             <form id="staff-form">
                                 <div class="form-group">
-                                    <label for="staffId">ID</label>
-                                    <input type="text" class="form-control" id="staffId" placeholder="Enter Item ID">
+                                    <label for="staffId">Staff ID</label>
+                                    <input type="text" class="form-control" id="staffId" placeholder="Enter Staff ID">
                                 </div>
-
                                 <div class="form-group">
-                                    <label for="staffName">Name</label>
-                                    <input type="text" class="form-control" id="staffName" placeholder="Enter Name">
+                                    <label for="staffName">Staff Name</label>
+                                    <input type="text" class="form-control" id="staffName" placeholder="Enter Staff Name">
                                 </div>
                                 <div class="form-group">
                                     <label for="staffNIC">NIC</label>
@@ -450,46 +449,39 @@
                                     <label for="staffDob">Birthday</label>
                                     <input type="date" class="form-control" id="staffDob" placeholder="Enter BirthDay">
                                 </div>
-                                <label for="dropdownStaff">Select Job Category</label>
-                                <div id="dropdownStaff">
-                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="jobCategory" data-bs-toggle="dropdown" aria-expanded="false">
-                                        Job Category
-                                    </button>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                        <li><button class="dropdown-item job-category" type="button">Kitchen</button></li>
-                                        <li><button class="dropdown-item job-category" type="button">Servant</button></li>
-                                        <li><button class="dropdown-item job-category" type="button">User</button></li>
-                                        <li><button class="dropdown-item job-category" type="button">Office</button></li>
-                                    </ul>
+                                <div class="form-group">
+                                    <label for="jobCategory">Job Category</label>
+                                    <select class="form-control" id="jobCategory">
+                                        <option value="Kitchen">Kitchen</option>
+                                        <option value="Servant">Servant</option>
+                                        <option value="User">User</option>
+                                        <option value="Office">Office</option>
+                                    </select>
                                 </div>
                                 <div class="form-group">
                                     <label for="staffContactNo">Contact No</label>
-                                    <label for="staffContactNo"></label><input type="text" class="form-control" id="staffContactNo" placeholder="Enter Contact No">
+                                    <input type="text" class="form-control" id="staffContactNo" placeholder="Enter Contact No">
                                 </div>
-
                                 <button type="button" id="staff-submit" class="btn btn-primary">Submit</button>
                                 <button type="button" id="staff-update" class="btn btn-primary">Update</button>
                                 <button type="button" id="staff-delete" class="btn btn-primary">Delete</button>
                                 <button type="button" id="staff-reset" class="btn btn-primary">Reset</button>
-
                             </form>
                         </div>
                         <div class="col-md-6">
-                            <!-- Table for student data -->
                             <h2>Staff</h2>
-                            <table id="staff-table" class="table">
+                            <table class="table">
                                 <thead>
                                 <tr>
-                                    <th scope="col">Staff ID</th>
-                                    <th scope="col">Name</th>
-                                    <th scope="col">NIC</th>
-                                    <th scope="col">Birthday</th>
-                                    <th scope="col">Job Category</th>
-                                    <th scope="col">Contact No</th>
+                                    <th>Staff ID</th>
+                                    <th>Staff Name</th>
+                                    <th>NIC</th>
+                                    <th>Birthday</th>
+                                    <th>Job Category</th>
+                                    <th>Contact No</th>
                                 </tr>
                                 </thead>
-                                <tbody>
-                                <!-- Table body content will be added dynamically -->
+                                <tbody id="staff-tbl-tbody">
                                 </tbody>
                             </table>
                         </div>
