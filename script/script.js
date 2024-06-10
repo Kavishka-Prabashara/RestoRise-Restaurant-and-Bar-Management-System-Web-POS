@@ -1,3 +1,4 @@
+/*
     $(document).ready(function(){
 
         $('#login-section').css({display: 'block'});
@@ -20,7 +21,7 @@
             $('#staff-section').css({display: 'none'});
         });
 
-/*        $('#loginSection-btnLogin').on('click', () => {
+/!*        $('#loginSection-btnLogin').on('click', () => {
 
             $('#login-Section').css({display: 'none'});
             $('#signUp-section').css({display: 'none'});
@@ -30,7 +31,7 @@
             $('#order-section').css({display: 'none'});
             $('#customer-section').css({display: 'none'});
             $('#staff-section').css({display: 'none'});
-        });*/
+        });*!/
 
     $('#nav-dashboard').on('click', () => {
         $('#login-section').css({display: 'none'});
@@ -105,3 +106,4 @@
 
 });
 
+*/
