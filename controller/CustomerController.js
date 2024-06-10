@@ -23,6 +23,28 @@ $("#customer-submit").on('click', () => {
     var customerNIC = $('#customerNIC').val();
     var customerContactNo = $('#customerContactNo').val();
 
+    // Regex patterns
+    var customerIdPattern = /^C\d{3}$/; // Pattern to match 'C' followed by 3 digits
+    var contactNoPattern = /^\d{10}$/;  // Pattern to match exactly 10 digits
+    var customerNICPattern = /^(\d{12}|\d{9}[vV])$/; // Pattern to match 12 digits or 9 digits followed by 'v' or 'V'
+
+    if (customerId === "" || customerName === "" || customerNIC === "" || customerContactNo === "") {
+        alert("All fields are required!");
+        return;
+    }
+    if (!customerIdPattern.test(customerId)) {
+        alert("Customer ID must follow the format 'C001'!");
+        return;
+    }
+    if (!contactNoPattern.test(customerContactNo)) {
+        alert("Contact number must be exactly 10 digits!");
+        return;
+    }
+    if (!customerNICPattern.test(customerNIC)) {
+        alert("NIC must be either 12 digits or 9 digits followed by 'v' or 'V'!");
+        return;
+    }
+
     // create an object - Class Syntax
     let customer = new CustomerModel(
         customerId, customerName, customerNIC, customerContactNo
@@ -33,6 +55,7 @@ $("#customer-submit").on('click', () => {
 
     loadTable();
     $("#customer-reset").click();
+    alert("Customer has been successfully saved!");
 });
 
 $("#customer-update").on('click', () => {
@@ -40,6 +63,28 @@ $("#customer-update").on('click', () => {
     var customerName = $('#customerName').val();
     var customerNIC = $('#customerNIC').val();
     var customerContactNo = $('#customerContactNo').val();
+
+    // Regex patterns
+    var customerIdPattern = /^C\d{3}$/; // Pattern to match 'C' followed by 3 digits
+    var contactNoPattern = /^\d{10}$/;  // Pattern to match exactly 10 digits
+    var customerNICPattern = /^(\d{12}|\d{9}[vV])$/; // Pattern to match 12 digits or 9 digits followed by 'v' or 'V'
+
+    if (customerId === "" || customerName === "" || customerNIC === "" || customerContactNo === "") {
+        alert("All fields are required!");
+        return;
+    }
+    if (!customerIdPattern.test(customerId)) {
+        alert("Customer ID must follow the format 'C001'!");
+        return;
+    }
+    if (!contactNoPattern.test(customerContactNo)) {
+        alert("Contact number must be exactly 10 digits!");
+        return;
+    }
+    if (!customerNICPattern.test(customerNIC)) {
+        alert("NIC must be either 12 digits or 9 digits followed by 'v' or 'V'!");
+        return;
+    }
 
     let customerObj = customers[recordIndex];
 
