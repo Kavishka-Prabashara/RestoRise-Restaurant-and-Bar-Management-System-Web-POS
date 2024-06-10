@@ -1,6 +1,8 @@
 import CustomerModel from "../model/CustomerModel.js";
 import { customers } from "../db/db.js";
 
+var recordIndex;
+
 $("#customer-submit").on('click', () => {
     var customerId = $('#customerId').val();
     var customerName = $('#customerName').val();
