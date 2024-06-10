@@ -3,6 +3,11 @@ import { items } from "../db/db.js";
 
 var recordIndex;
 
+// Event listener for setting dropdown item text
+$(document).on('click', '.dropdown-item', function() {
+    $('#dropdownItemCategory').text($(this).text());
+});
+
 $("#item-submit").on('click', () => {
     var supplierId = $('#supplierId').val();
     var supplierName = $('#supplierName').val();
@@ -13,17 +18,16 @@ $("#item-submit").on('click', () => {
     var itemUnitPrice = $('#itemUnitPrice').val();
     var suppliedDate = $('#suppliedDate').val();
 
-
     // Regex patterns
-    var supplierIdPattern = /^SP\d{3}$/; // Pattern to match 'S' followed by 3 digits
-    var itemIdPattern = /^I\d{3}$/; // Pattern to match 'S' followed by 3 digits
+    var supplierIdPattern = /^SP\d{3}$/; // Pattern to match 'SP' followed by 3 digits
+    var itemIdPattern = /^I\d{3}$/; // Pattern to match 'I' followed by 3 digits
 
-    if (supplierId === "" || supplierName === "" || dropdownItemCategory === "" || itemId === "" || itemName === "" || itemQTY === "" || itemUnitPrice === "" || suppliedDate === "") {
+    if (supplierId === "" || supplierName === "" || dropdownItemCategory === "Item Category" || itemId === "" || itemName === "" || itemQTY === "" || itemUnitPrice === "" || suppliedDate === "") {
         alert("All fields are required!");
         return;
     }
     if (!supplierIdPattern.test(supplierId)) {
-        alert("Supplier ID must follow the format 'S001'!");
+        alert("Supplier ID must follow the format 'SP001'!");
         return;
     }
     if (!itemIdPattern.test(itemId)) {
@@ -32,20 +36,19 @@ $("#item-submit").on('click', () => {
     }
 
     let item = new ItemModel(
-        supplierId, supplierName, dropdownItemCategory, itemId, itemName, itemQTY , itemUnitPrice , suppliedDate
+        supplierId, supplierName, dropdownItemCategory, itemId, itemName, itemQTY, itemUnitPrice, suppliedDate
     );
 
     items.push(item);
 
     loadTable();
     $("#item-reset").click();
-    alert("Items has been successfully saved!");
+    alert("Item has been successfully saved!");
 });
 
 function loadTable() {
     $("#item-tbl-tbody").empty();
-    items.map((staff, index) => {
-        console.log(item);
+    items.map((item, index) => {
         let record = `<tr>
             <td class="item-supplierId-value">${item.supplierId}</td>
             <td class="item-supplierName-value">${item.supplierName}</td>
@@ -58,20 +61,8 @@ function loadTable() {
         </tr>`;
         $("#item-tbl-tbody").append(record);
     });
-
-    const dropdownButton = document.getElementById('dropdownItemCategory');
-// Get all dropdown items
-    const dropdownItems = document.querySelectorAll('.dropdown-item');
-
-// Loop through each dropdown item
-    dropdownItems.forEach(item => {
-        // Add click event listener
-        item.addEventListener('click', function() {
-            // Set the button text to the clicked item's text
-            dropdownButton.textContent = this.textContent;
-        });
-    });
 }
+
 $("#item-update").on('click', () => {
     var supplierId = $('#supplierId').val();
     var supplierName = $('#supplierName').val();
@@ -82,16 +73,16 @@ $("#item-update").on('click', () => {
     var itemUnitPrice = $('#itemUnitPrice').val();
     var suppliedDate = $('#suppliedDate').val();
 
-    var supplierIdPattern = /^SP\d{3}$/; // Pattern to match 'S' followed by 3 digits
-    var itemIdPattern = /^I\d{3}$/; // Pattern to match 'S' followed by 3 digits
-    var itemQTYPattern = /^\d+$/; // Pattern to match 'S' followed by 3 digits
+    var supplierIdPattern = /^SP\d{3}$/; // Pattern to match 'SP' followed by 3 digits
+    var itemIdPattern = /^I\d{3}$/; // Pattern to match 'I' followed by 3 digits
+    var itemQTYPattern = /^\d+$/; // Pattern to match only digits
 
-    if (supplierId === "" || supplierName === "" || dropdownItemCategory === "" || itemId === "" || itemName === "" || itemQTY === "" || itemUnitPrice === "" || suppliedDate === "") {
+    if (supplierId === "" || supplierName === "" || dropdownItemCategory === "Item Category" || itemId === "" || itemName === "" || itemQTY === "" || itemUnitPrice === "" || suppliedDate === "") {
         alert("All fields are required!");
         return;
     }
     if (!supplierIdPattern.test(supplierId)) {
-        alert("Supplier ID must follow the format 'S001'!");
+        alert("Supplier ID must follow the format 'SP001'!");
         return;
     }
     if (!itemIdPattern.test(itemId)) {
@@ -99,7 +90,7 @@ $("#item-update").on('click', () => {
         return;
     }
     if (!itemQTYPattern.test(itemQTY)) {
-        alert("Enter valid Inputs!");
+        alert("Enter valid QTY!");
         return;
     }
 
@@ -116,7 +107,7 @@ $("#item-update").on('click', () => {
 
     loadTable();
     $("#item-reset").click();
-    alert("Items record has been successfully updated!");
+    alert("Item record has been successfully updated!");
 });
 
 $("#item-delete").on('click', () => {
@@ -124,7 +115,7 @@ $("#item-delete").on('click', () => {
         items.splice(recordIndex, 1);
         loadTable();
         $("#item-reset").click();
-        alert("Items record has been successfully deleted!");
+        alert("Item record has been successfully deleted!");
     } else {
         alert("Please select a record to delete.");
     }
@@ -132,6 +123,7 @@ $("#item-delete").on('click', () => {
 
 $("#item-reset").on('click', () => {
     $('#item-form')[0].reset();
+    $('#dropdownItemCategory').text('Item Category');
     recordIndex = undefined;
 });
 
@@ -139,25 +131,23 @@ $("#item-tbl-tbody").on('click', 'tr', function() {
     let index = $(this).index();
     recordIndex = index;
 
-    console.log("index: ", index);
+    let supplierId = $(this).find(".item-supplierId-value").text();
+    let supplierName = $(this).find(".item-supplierName-value").text();
+    let dropdownItemCategory = $(this).find(".item-dropdownItemCategory-value").text();
+    let itemId = $(this).find(".item-itemId-value").text();
+    let itemName = $(this).find(".item-itemName-value").text();
+    let itemQTY = $(this).find(".item-itemQTY-value").text();
+    let itemUnitPrice = $(this).find(".item-itemUnitPrice-value").text();
+    let suppliedDate = $(this).find(".item-suppliedDate-value").text();
 
-    let ItemSupID = $(this).find(".item-ItemSupID-value").text();
-    let ItemSupName = $(this).find(".item-ItemSupName-value").text();
-    let ItemDropdownItemCategory = $(this).find(".item-ItemDropdownItemCategory-value").text();
-    let ItemId = $(this).find(".item-ItemId-value").text();
-    let ItemName = $(this).find(".item-ItemName-value").text();
-    let ItemQTY = $(this).find(".item-ItemQTY-value").text();
-    let ItemUnitPrice = $(this).find(".item-ItemUnitPrice-value").text();
-    let ItemSuppliedDate = $(this).find(".item-ItemSuppliedDate-value").text();
-
-    $("#supplierId").val(ItemSupID);
-    $("#supplierName").val(ItemSupName);
-    $("#dropdownItemCategory").val(ItemDropdownItemCategory);
-    $("#itemId").val(ItemId);
-    $("#itemName").val(ItemName);
-    $("#itemQTY").val(ItemQTY);
-    $("#itemUnitPrice").val(ItemUnitPrice);
-    $("#suppliedDate").val(ItemSuppliedDate);
+    $("#supplierId").val(supplierId);
+    $("#supplierName").val(supplierName);
+    $("#dropdownItemCategory").text(dropdownItemCategory);
+    $("#itemId").val(itemId);
+    $("#itemName").val(itemName);
+    $("#itemQTY").val(itemQTY);
+    $("#itemUnitPrice").val(itemUnitPrice);
+    $("#suppliedDate").val(suppliedDate);
 });
 
 $(document).ready(() => {
