@@ -5,7 +5,7 @@ export default class LoginModel {
         this._address = address;
         this._mobileNo = mobileNo;
         this._password = password;
-        this._confirmPassword = confirmPassword;A
+        this._confirmPassword = confirmPassword;
     }
 
     get email() {
