@@ -95,6 +95,7 @@ $("#customer-update").on('click', () => {
 
     loadTable();
     $("#customer-reset").click();
+    alert("Customer record has been successfully updated!");
 });
 
 $("#customer-delete").on('click', () => {
@@ -118,4 +119,7 @@ $("#customer-tbl-tbody").on('click', 'tr', function() {
     $("#customerName").val(cusName);
     $("#customerNIC").val(cusNIC);
     $("#customerContactNo").val(cusContactNo);
+});
+$(document).ready(() => {
+    loadTable();
 });
