@@ -3,8 +3,8 @@ export var users = [
 ];
 
 export var items = [
- { supplierId: 'SP001', supplierName: 'Amal', itemCategory: 'Kitchen', itemId: 'I001', itemName: 'Corn Powder', itemQTY: 100, itemUnitPrice: 100, suppliedDate: '2024-01-01' },
- { supplierId: 'SP002', supplierName: 'Nimal', itemCategory: 'Bartender', itemId: 'Beer', itemName: 'Wild Apple', itemQTY: 200, itemUnitPrice: 850, suppliedDate: '2024-02-01' }
+ { supplierId: 'SP001', supplierName: 'Amal', itemCategory: 'Kitchen', itemId: 'I001', itemName: 'Corn Powder', itemitemQTY: 100, itemUnititemUnitPrice: 100, suppliedDate: '2024-01-01' },
+ { supplierId: 'SP002', supplierName: 'Nimal', itemCategory: 'Bartender', itemId: 'Beer', itemName: 'Wild Apple', itemitemQTY: 200, itemUnititemUnitPrice: 850, suppliedDate: '2024-02-01' }
 ];
 
 export var customers = [
@@ -18,4 +18,6 @@ export var staffs = [
 { staffId: 'S003' , staffName : 'Omesh' , staffNIC:'200209002236' , staffDob: '2002-01-02', jobCategory: 'Bartender' , staffContactNo: '0771234560' }];
 
 
-export var orders = [];
+export var order_db = [];
+
+export var order_details_db = [];
