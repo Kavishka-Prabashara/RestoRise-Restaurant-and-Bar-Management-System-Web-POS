@@ -4,7 +4,7 @@ export var users = [
 
 export var items = [
  { supplierId: 'SP001', supplierName: 'Amal', itemCategory: 'Kitchen', itemId: 'I001', itemName: 'Corn Powder', itemitemQTY: 100, itemUnititemUnitPrice: 100, suppliedDate: '2024-01-01' },
- { supplierId: 'SP002', supplierName: 'Nimal', itemCategory: 'Bartender', itemId: 'Beer', itemName: 'Wild Apple', itemitemQTY: 200, itemUnititemUnitPrice: 850, suppliedDate: '2024-02-01' }
+ { supplierId: 'SP002', supplierName: 'Nimal', itemCategory: 'Bartender', itemId: 'I002', itemName: 'Wild Apple', itemitemQTY: 200, itemUnititemUnitPrice: 850, suppliedDate: '2024-02-01' }
 ];
 
 export var customers = [
