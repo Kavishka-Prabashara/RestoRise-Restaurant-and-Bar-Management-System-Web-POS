@@ -1,9 +1,9 @@
 export class orderModel{
-    constructor(order_id,item_id,itemUnitPrice,itemQTY) {
+    constructor(order_id,itemId,itemUnititemUnitPrice,itemitemQTY) {
         this.order_id=order_id;
-        this.item_id=item_id;
-        this.itemUnitPrice=itemUnitPrice;
-        this.itemQTY=itemQTY;
+        this.itemId=itemId;
+        this.itemUnititemUnitPrice=itemUnititemUnitPrice;
+        this.itemitemQTY=itemitemQTY;
     }
 
 }
