@@ -34,6 +34,7 @@ $("#signUpSubmit").on('click', () => {
     var password = $('#signUp-Section-password').val();
     var confirmPassword = $('#signUp-Section-confirm-password').val();
 
+
     // Basic validation
     if (!email || !userName || !address || !mobileNo || !password || !confirmPassword) {
         alert('All fields are required.');
@@ -60,15 +61,15 @@ $("#signUpSubmit").on('click', () => {
     if (user) {
         alert('SignUp successful!');
         $('#login-Section').show();
-        $('#signUp-section').hide();
         $('#dashboard-section').hide();
         $('#navigation-bar').hide();
-
+        $('#signUp-section').hide();
+        // Proceed with login (e.g., redirect to another page)
+        // window.location.href = "home.html"; // Example redirect
     } else {
-        alert('Something went wrong!');
+        alert('Invalid email or password.');
     }
     // Show success message
-
 });
 
 // Simple email validation function
