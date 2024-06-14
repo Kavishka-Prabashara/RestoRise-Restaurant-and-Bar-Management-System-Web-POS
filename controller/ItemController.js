@@ -14,17 +14,17 @@ $("#item-submit").on('click', () => {
     var dropdownItemCategory = $('#dropdownItemCategory').text();
     var itemId = $('#itemId').val();
     var itemName = $('#itemName').val();
-    var itemQTY = $('#itemQTY').val();
-    var itemUnitPrice = $('#itemUnitPrice').val();
+    var itemitemQTY = $('#itemitemQTY').val();
+    var itemUnititemUnitPrice = $('#itemUnititemUnitPrice').val();
     var suppliedDate = $('#suppliedDate').val();
 
     // Regex patterns
     var supplierIdPattern = /^SP\d{3}$/; // Pattern to match 'SP' followed by 3 digits
     var itemIdPattern = /^I\d{3}$/; // Pattern to match 'I' followed by 3 digits
-    var itemQTYPattern = /^\d+$/; // Pattern to match only digits
-    var itemUnitPricePattern = /^\d+$/; // Pattern to match only digits
+    var itemitemQTYPattern = /^\d+$/; // Pattern to match only digits
+    var itemUnititemUnitPricePattern = /^\d+$/; // Pattern to match only digits
 
-    if (supplierId === "" || supplierName === "" || dropdownItemCategory === "Item Category" || itemId === "" || itemName === "" || itemQTY === "" || itemUnitPrice === "" || suppliedDate === "") {
+    if (supplierId === "" || supplierName === "" || dropdownItemCategory === "Item Category" || itemId === "" || itemName === "" || itemitemQTY === "" || itemUnititemUnitPrice === "" || suppliedDate === "") {
         alert("All fields are required!");
         return;
     }
@@ -36,17 +36,17 @@ $("#item-submit").on('click', () => {
         alert("Item ID must follow the format 'I001'!");
         return;
     }
-    if (!itemQTYPattern.test(itemQTY)) {
-        alert("Enter Valid QTY Inputs!");
+    if (!itemitemQTYPattern.test(itemitemQTY)) {
+        alert("Enter Valid itemQTY Inputs!");
         return;
     }
-    if (!itemUnitPricePattern.test(itemUnitPrice)) {
-        alert("Enter Valid Unit Price Inputs!");
+    if (!itemUnititemUnitPricePattern.test(itemUnititemUnitPrice)) {
+        alert("Enter Valid Unit itemUnitPrice Inputs!");
         return;
     }
 
     let item = new ItemModel(
-        supplierId, supplierName, dropdownItemCategory, itemId, itemName, itemQTY, itemUnitPrice, suppliedDate
+        supplierId, supplierName, dropdownItemCategory, itemId, itemName, itemitemQTY, itemUnititemUnitPrice, suppliedDate
     );
 
     items.push(item);
@@ -65,8 +65,8 @@ function loadTable() {
             <td class="item-dropdownItemCategory-value">${item.dropdownItemCategory}</td>
             <td class="item-itemId-value">${item.itemId}</td>
             <td class="item-itemName-value">${item.itemName}</td>
-            <td class="item-itemQTY-value">${item.itemQTY}</td>
-            <td class="item-itemUnitPrice-value">${item.itemUnitPrice}</td>
+            <td class="item-itemitemQTY-value">${item.itemitemQTY}</td>
+            <td class="item-itemUnititemUnitPrice-value">${item.itemUnititemUnitPrice}</td>
             <td class="item-suppliedDate-value">${item.suppliedDate}</td>
         </tr>`;
         $("#item-tbl-tbody").append(record);
@@ -79,15 +79,15 @@ $("#item-update").on('click', () => {
     var dropdownItemCategory = $('#dropdownItemCategory').text();
     var itemId = $('#itemId').val();
     var itemName = $('#itemName').val();
-    var itemQTY = $('#itemQTY').val();
-    var itemUnitPrice = $('#itemUnitPrice').val();
+    var itemitemQTY = $('#itemitemQTY').val();
+    var itemUnititemUnitPrice = $('#itemUnititemUnitPrice').val();
     var suppliedDate = $('#suppliedDate').val();
 
     var supplierIdPattern = /^SP\d{3}$/; // Pattern to match 'SP' followed by 3 digits
     var itemIdPattern = /^I\d{3}$/; // Pattern to match 'I' followed by 3 digits
-    var itemQTYPattern = /^\d+$/; // Pattern to match only digits
+    var itemitemQTYPattern = /^\d+$/; // Pattern to match only digits
 
-    if (supplierId === "" || supplierName === "" || dropdownItemCategory === "Item Category" || itemId === "" || itemName === "" || itemQTY === "" || itemUnitPrice === "" || suppliedDate === "") {
+    if (supplierId === "" || supplierName === "" || dropdownItemCategory === "Item Category" || itemId === "" || itemName === "" || itemitemQTY === "" || itemUnititemUnitPrice === "" || suppliedDate === "") {
         alert("All fields are required!");
         return;
     }
@@ -99,8 +99,8 @@ $("#item-update").on('click', () => {
         alert("Item ID must follow the format 'I001'!");
         return;
     }
-    if (!itemQTYPattern.test(itemQTY)) {
-        alert("Enter valid QTY!");
+    if (!itemitemQTYPattern.test(itemitemQTY)) {
+        alert("Enter valid itemQTY!");
         return;
     }
 
@@ -111,8 +111,8 @@ $("#item-update").on('click', () => {
     itemObj.dropdownItemCategory = dropdownItemCategory;
     itemObj.itemId = itemId;
     itemObj.itemName = itemName;
-    itemObj.itemQTY = itemQTY;
-    itemObj.itemUnitPrice = itemUnitPrice;
+    itemObj.itemitemQTY = itemitemQTY;
+    itemObj.itemUnititemUnitPrice = itemUnititemUnitPrice;
     itemObj.suppliedDate = suppliedDate;
 
     loadTable();
@@ -146,8 +146,8 @@ $("#item-tbl-tbody").on('click', 'tr', function() {
     let dropdownItemCategory = $(this).find(".item-dropdownItemCategory-value").text();
     let itemId = $(this).find(".item-itemId-value").text();
     let itemName = $(this).find(".item-itemName-value").text();
-    let itemQTY = $(this).find(".item-itemQTY-value").text();
-    let itemUnitPrice = $(this).find(".item-itemUnitPrice-value").text();
+    let itemitemQTY = $(this).find(".item-itemitemQTY-value").text();
+    let itemUnititemUnitPrice = $(this).find(".item-itemUnititemUnitPrice-value").text();
     let suppliedDate = $(this).find(".item-suppliedDate-value").text();
 
     $("#supplierId").val(supplierId);
@@ -155,8 +155,8 @@ $("#item-tbl-tbody").on('click', 'tr', function() {
     $("#dropdownItemCategory").text(dropdownItemCategory);
     $("#itemId").val(itemId);
     $("#itemName").val(itemName);
-    $("#itemQTY").val(itemQTY);
-    $("#itemUnitPrice").val(itemUnitPrice);
+    $("#itemitemQTY").val(itemitemQTY);
+    $("#itemUnititemUnitPrice").val(itemUnititemUnitPrice);
     $("#suppliedDate").val(suppliedDate);
 });
 
