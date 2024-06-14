@@ -97,7 +97,7 @@
             });
 
              $('.item-category').on('click', function() {
-                $('#dropdownItemCategory').text($(this).text());
+                $('#itemCategory').text($(this).text());
             });
         document.addEventListener('DOMContentLoaded', () => {
             const signUpForm = document.getElementById('signUp-section');
