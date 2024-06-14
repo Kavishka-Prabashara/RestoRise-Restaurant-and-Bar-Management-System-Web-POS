@@ -15,6 +15,14 @@
     <script type="module" src="controller/OrderController.js"></script>
 
     <style>
+        body {
+            background-color: #282828;
+            color: #ffffff; /* Change this to your desired font color */
+            font-family: Arial, sans-serif; /* Change this to your desired font family */
+        }
+        input {
+            color: #cccccc;
+        }
     .col-sm-6 {
         position: relative;
         overflow: hidden;
@@ -28,7 +36,55 @@
             height: 100%;
         }
     }
-</style>
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .row {
+        display: flex;
+    }
+
+    .single-column .col {
+        flex: 1;
+        padding: 20px;
+        background-color: #e0e0e0;
+        border: 1px solid #ccc;
+        text-align: center;
+    }
+
+    .double-column .col {
+        flex: 1;
+        padding: 20px;
+        background-color: #d0d0d0;
+        border: 1px solid #ccc;
+        text-align: center;
+    }
+
+    .row.double-column {
+        display: flex;
+        gap: 10px;
+    }
+
+    .row.single-column {
+        display: flex;
+    }
+    label {
+        color: #cccccc;
+    }
+    th , td {
+        color: #cccccc;
+    }
+        #navigation-bar .navbar-nav .nav-link {
+            color: #ffffff !important; /* White font color */
+        }
+        /* Optional: Custom style for navbar-brand */
+        #navigation-bar .navbar-brand {
+            color: #ffffff !important;
+        }
+    </style>
 
 </head>
     <body>
@@ -37,16 +93,16 @@
 <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ <Header> ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
 
         <header>
-            <nav id="navigation-bar" class="navbar navbar-expand-lg navbar-light bg-light">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#">RestoRise</a>
+            <nav id="navigation-bar" class="navbar navbar-expand-lg navbar-light bg-dark">
+                <div class="container-fluid bg-dark">
+                    <a class="navbar-brand bg-dark" href="#">RestoRise</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
+                        <span class="navbar-toggler-icon "></span>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" id="nav-dashboard">Dashboard </a>
+                    <div class="collapse navbar-collapse bg-dark" id="navbarNav">
+                        <ul class="navbar-nav bg-dark" >
+                            <li class="nav-item" >
+                                <a class="nav-link active" aria-current="page" id="nav-dashboard" >Dashboard </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" aria-current="page" id="nav-item">Items</a>
@@ -72,7 +128,7 @@
 <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ <Main> ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
         <main>
 
-<!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ <Dashboard> ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+
 <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ <Sign Up> ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
             <section id="signUp-section" class="vh-100">
                 <div class="container-fluid">
@@ -138,14 +194,14 @@
 
                             <div class="px-4 ms-xl-4">
                                 <i class="fas fa-crow fa-2x me-3 pt-5 mt-xl-4" style="color: #709085;"></i>
-                                <span class="h1 fw-bold mb-0">RestoRise</span>
+                                <span class="h1 fw-bold mb-0" style="color: #ffffff;">RestoRise</span>
                             </div>
 
                             <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
 
                                 <form style="width: 23rem;">
 
-                                    <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Log in</h3>
+                                    <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px ;color: #ffffff;">Log in</h3>
 
                                     <div data-mdb-input-init class="form-outline mb-4">
                                         <input type="email" id="loginSection-email" class="form-control form-control-lg" />
@@ -162,7 +218,7 @@
                                     </div>
 
                                     <p class="small mb-5 pb-lg-2"><a id="loginSection-forgetPassword" class="text-muted" href="#!">Forgot password?</a></p>
-                                    <p>Don't have an account? <a id="loginSection-register" href="#!" class="link-info">Register here</a></p>
+                                    <p style="color: #ffffff;">Don't have an account? <a id="loginSection-register" href="#!" class="link-info">Register here</a></p>
 
                                 </form>
 
@@ -177,17 +233,18 @@
                 </div>
             </section>
 <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ </Login> ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+<!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ <Dashboard> ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
             <section id="dashboard-section">
                 <section class="container">
                     <div class="row">
-                        <div class="col-12 text-center <!--bg-primary--> text-white py-4">
-                            <h1 id="dashboardTitle">RestoRise Restaurant & Bar</h1>
+                        <div class="col-12 text-center <!--bg-primary--> text-white py-4" >
+                            <h1 id="dashboardTitle" style="color: #ffffff;">RestoRise Restaurant & Bar</h1>
                             <img src="assets/images/logo.png" alt="Logo" id="logoID">
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row" id="dashboardRow">
                         <div class="col-sm-12 col-md-6 col-lg-4">
-                            <div class="bg-light p-3 mb-3">
+                            <div class="bg-dark p-3 mb-3" >
                                 <h2 class="mb-3">Sales Statistics</h2>
                                 <div>Total Sales: $500</div>
                                 <div>Total Orders: 20</div>
@@ -201,7 +258,7 @@
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-6 col-lg-4">
-                            <div class="bg-light p-3 mb-3">
+                            <div class="bg-dark p-3 mb-3">
                                 <h2 class="mb-3">Recent Orders</h2>
                                 <ul>
                                     <li>Burger Combo - $10</li>
@@ -212,8 +269,8 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-sm-12 col-md-6 col-lg-4">
-                            <div class="bg-light p-3 mb-3">
+                        <div class="col-sm-12 col-md-6 col-lg-4" >
+                            <div class="bg-dark p-3 mb-3">
                                 <h2 class="mb-3">Menu</h2>
                                 <ul>
                                     <li>Burger - $5</li>
@@ -226,7 +283,7 @@
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-6 col-lg-4">
-                            <div class="bg-light p-3 mb-3">
+                            <div class="bg-dark p-3 mb-3">
                                 <h2 class="mb-3">Staff Online</h2>
                                 <ul>
                                     <li>John Doe</li>
@@ -326,10 +383,10 @@
                 <div class="container">
                     <!-- First row with two columns -->
                     <div class="row double-column">
-                        <div class="col">
-                            <div class="card" id="invoiceDetails">
+                        <div class="col bg-dark">
+                            <div class="card bg-dark" id="invoiceDetails">
                                 <div class="card-header text-center gradient-text">
-                                    <h3>Invoice Details</h3>
+                                    <h3 >Invoice Details</h3>
                                 </div>
                                 <div class="m-3 col-md-11">
                                     <label for="order_id" class="form-label">Order Id :</label>
@@ -375,8 +432,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col">
-                            <div class="card" id="orderDetails1">
+                        <div class="col bg-dark">
+                            <div class="card bg-dark" id="orderDetails1">
                                 <div class="card-header text-center gradient-text">
                                     <h3>Select Items</h3>
                                 </div>
@@ -411,10 +468,10 @@
                     </div>
 
                     <!-- Second row with single column -->
-                    <div class="row single-column">
-                        <div class="col">
-                            <div class="card" id="orderDetailsTable">
-                                <div class="col m-3">
+                    <div class="row single-column bg-dark">
+                        <div class="col bg-dark">
+                            <div class="card bg-dark" id="orderDetailsTable">
+                                <div class="col m-3 bg-dark">
                                     <table class="table" id="item-order-table">
                                         <thead class="table-color">
                                         <tr>
@@ -434,18 +491,18 @@
 
                     <!-- Third row with single column -->
                     <div class="row single-column">
-                        <div class="col">
-                            <div class="card" id="orderDetailsForm">
+                        <div class="col bg-dark">
+                            <div class="card bg-dark" id="orderDetailsForm">
                                 <div class="card-header text-center gradient-text">
                                     <h3>Order Details</h3>
                                 </div>
-                                <form class="d-flex" role="search">
+                                <form class="d-flex bg-dark" role="search">
                                     <input id="searchField4" class="form-control me-3 searchField" type="search" placeholder="Search" aria-label="Search">
                                     <button id="search4" class="btn btn-outline-success searchBtn" type="button">Search</button>
                                 </form>
-                                <div class="col m-3">
-                                    <table class="table" id="order-details-table">
-                                        <thead class="table-color">
+                                <div class="col m-3 bg-dark">
+                                    <table class="table bg-dark" id="order-details-table">
+                                        <thead class="table-color bg-dark">
                                         <tr>
                                             <th scope="col">Order Id</th>
                                             <th scope="col">Order Date</th>
