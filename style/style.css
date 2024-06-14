@@ -63,3 +63,74 @@ header {
     width: 200px;
 }
 
+body {
+    background-color: #282828;
+    color: #ffffff; /* Change this to your desired font color */
+    font-family: Arial, sans-serif; /* Change this to your desired font family */
+}
+input {
+    color: #cccccc;
+}
+.col-sm-6 {
+    position: relative;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: auto 100%;
+}
+
+@media (min-width: 1025px) {
+    .h-custom-2 {
+        height: 100%;
+    }
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+
+.row {
+    display: flex;
+}
+
+.single-column .col {
+    flex: 1;
+    padding: 20px;
+    background-color: #e0e0e0;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.double-column .col {
+    flex: 1;
+    padding: 20px;
+    background-color: #d0d0d0;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.row.double-column {
+    display: flex;
+    gap: 10px;
+}
+
+.row.single-column {
+    display: flex;
+}
+label {
+    color: #cccccc;
+}
+th , td {
+    color: #cccccc;
+}
+#navigation-bar .navbar-nav .nav-link {
+    color: #ffffff !important; /* White font color */
+}
+/* Optional: Custom style for navbar-brand */
+#navigation-bar .navbar-brand {
+    color: #ffffff !important;
+}
+
+
