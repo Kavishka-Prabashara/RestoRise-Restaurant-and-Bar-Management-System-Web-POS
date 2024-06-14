@@ -4,7 +4,6 @@ import ItemModel from "../model/ItemModel.js";
 import {customers} from "../db/db.js";
 import CustomerModel from "../model/CustomerModel.js";
 
-
 import {order_db} from "../db/db.js";
 import {OrderModel} from "../model/OrderModel.js";
 
@@ -15,9 +14,9 @@ let customerIdCB = $('#customer_id1');
 let itemIdCB = $('#item_code1');
 let orderId=$('#order_id');
 let itemName=$('#item_name1');
-let itemUnitPrice=$('#price1');
+let itemUnititemUnitPrice=$('#price1');
 let qtyOnHand=$('#qty_on_hand');
-let itemQTY=$('#getQty');
+let itemitemQTY=$('#getQty');
 let customerName=$('#customer_name1');
 let total=$('#total');
 let discountInput = $('#discount');
@@ -84,8 +83,8 @@ function populateCustomerIDs() {
     }
 }
 
-/*Function to populate the itemId Combo Box*/
-function populateitemIds() {
+/*Function to populate the ItemId Combo Box*/
+function populateItemIDs() {
 
     // Clear existing options except the default one
     itemIdCB.find("option:not(:first-child)").remove();
@@ -93,8 +92,8 @@ function populateitemIds() {
     // Iterate through the customerArray and add options to the select element
     for (let i = 0; i < items.length; i++) {
         itemIdCB.append($("<option>", {
-            value: items[i].itemCode,
-            text: items[i].itemCode
+            value: items[i].itemId,
+            text: items[i].itemId
         }));
     }
 }
@@ -123,24 +122,24 @@ itemIdCB.on("change", function() {
     let selectedValue = $(this).val();
 
     let itemObj = $.grep(items, function(item) {
-        return item.itemCode === selectedValue;
+        return item.itemId === selectedValue;
     });
 
     if (itemObj.length > 0) {
         // Access the first element in the filtered array
         itemName.val(itemObj[0].itemName); // Assuming there is an 'item_name' property
-        itemUnitPrice.val(itemObj[0].itemUnitPrice);
-        qtyOnHand.val(itemObj[0].itemQTY);
+        itemUnititemUnitPrice.val(itemObj[0].itemUnititemUnitPrice);
+        qtyOnHand.val(itemObj[0].itemitemQTY);
     }
 
     // Check if the item is already in the itemsss array
-    let existingItem = itemsss.find(item => item.itemCode === selectedValue);
+    let existingItem = itemsss.find(item => item.itemId === selectedValue);
 
     if (existingItem) {
         updateBtn2.prop("disabled", false);
         removeBtn.prop("disabled",false);
         add.prop("disabled", true);
-        itemQTY.val(existingItem.qtyValue);
+        itemitemQTY.val(existingItem.qtyValue);
     }
 });
 
@@ -164,7 +163,7 @@ function populateItemTable() {
     itemsss.map((item) => {
         $('tbody').eq(2).append(
             `<tr>
-                <th scope="row">${item.itemCode}</th>
+                <th scope="row">${item.itemId}</th>
                 <td>${item.itemName}</td>
                 <td>${item.priceValue}</td>
                 <td>${item.qtyOnHand}</td>
@@ -177,16 +176,16 @@ function populateItemTable() {
 /*Event handler for the "Add" button*/
 add.on("click", function () {
     let itemCodeValue = itemIdCB.val();
-    let qtyValue = parseInt(itemQTY.val());
+    let qtyValue = parseInt(itemitemQTY.val());
 
     if (qtyOnHand.val() >= qtyValue) {
         let itemNameValue = itemName.val();
-        let priceValue = itemUnitPrice.val();
+        let priceValue = itemUnititemUnitPrice.val();
         let qtyOnHandValue = qtyOnHand.val();
 
         /*Add a new item to the itemsss array*/
         itemsss.push({
-            itemCode: itemCodeValue,
+            itemId: itemCodeValue,
             itemName: itemNameValue,
             priceValue: priceValue,
             qtyOnHand: qtyOnHandValue,
@@ -198,8 +197,9 @@ add.on("click", function () {
 
         /*Reset the item details*/
         resetItemDetails.click();
+        alert("Product Successful Add to !!!");
     } else {
-        showValidationError('Invalid Input', 'Out of stock');
+        alert("Something went wrong! Check Stock or Inputs");
     }
 
     total.val(calculateTotal());
@@ -209,10 +209,10 @@ add.on("click", function () {
 updateBtn2.on("click",function () {
 
     let itemCodeValue = itemIdCB.val();
-    let qtyValue = parseInt(itemQTY.val());
+    let qtyValue = parseInt(itemitemQTY.val());
 
     /*Check if the item is already in the itemsss array*/
-    let existingItem = itemsss.find(item => item.itemCode === itemCodeValue);
+    let existingItem = itemsss.find(item => item.itemId === itemCodeValue);
 
     if (existingItem) {
         if (qtyOnHand.val() >= qtyValue) {
@@ -225,7 +225,7 @@ updateBtn2.on("click",function () {
             /*Reset the item details*/
             resetItemDetails.click();
         } else {
-            showValidationError('Invalid Input', 'Out of stock');
+            alert("Out of Stock !");
         }
     }
 
@@ -233,20 +233,12 @@ updateBtn2.on("click",function () {
 
 });
 
-function showValidationError(title, text) {
-    Swal.fire({
-        icon: 'error',
-        title: title,
-        text: text,
-        footer: '<a href="">Why do I have this issue?</a>'
-    });
-}
 
 resetItemDetails.on("click", function () {
     itemIdCB.val('Select Item Code');
-    itemQTY.val('');
+    itemitemQTY.val('');
     itemName.val('');
-    itemUnitPrice.val('');
+    itemUnititemUnitPrice.val('');
     qtyOnHand.val('');
     updateBtn2.prop("disabled", true);
     removeBtn.prop("disabled",true);
@@ -280,46 +272,46 @@ cashInput.on("input", function() {
 });
 
 submitBtn.on("click", function (e) {
-    alert("Button was clicked!");
+
     e.preventDefault();
 
     // Get the data needed for the order
     const orderDate = $("#order_date").val();
     const orderId = $("#order_id").val();
-    const customerId = $("#customerID1").val();
+    const customerId = $("#customer_id1").val();
     const total = $("#total").val();
     const discount = $("#discount").val();
     const cash = $("#Cash").val();
 
     // Validate order data
     if (!orderDate) {
-        showValidationError('Null Input', 'Please select an order date');
+        alert("Please select a valid date!");
         return;
     }
 
     if (!orderId) {
-        showValidationError('Null Input', 'Please generate an order ID');
+        alert("Please select a valid OrderID!");
         return;
     }
 
     if (customerId === "Select Customer Id") {
-        showValidationError('Invalid Input', 'Please select a customer');
+        alert("Please select a valid Customer ID!");
         return;
     }
 
     if (!total || parseFloat(total) <= 0) {
-        showValidationError('Invalid Input', 'Total must be a positive number');
+        alert("Total must be a positive number!");
         return;
     }
 
     if (!cash || parseFloat(cash) < 0) {
-        showValidationError('Invalid Input', 'Cash amount must be a positive number');
+        alert("Cash amount must be a positive number");
         return;
     }
 
     const discountValue = parseFloat(discount);
     if (isNaN(discountValue) || discountValue < 0 || discountValue > 100) {
-        showValidationError('Invalid Input', 'Discount must be a number between 0 and 100');
+        alert("Discount must be a number between 0 and 100");
         return;
     }
 
@@ -331,23 +323,20 @@ submitBtn.on("click", function (e) {
 
     // Loop through the itemsss in your order details
     itemsss.forEach(item => {
-        const orderDetail = new orderModel(orderId, item.itemCode, item.priceValue, item.qtyValue);
+        const orderDetail = new orderModel(orderId, item.itemId, item.priceValue, item.qtyValue);
         order_details_db.push(orderDetail);
 
         items.forEach((itemObj) => {
-            if (itemObj.itemCode === item.itemCode) {
-                itemObj.itemQTY -= item.qtyValue;
+            if (itemObj.itemId === item.itemId) {
+                itemObj.itemitemQTY -= item.qtyValue;
             }
         });
     });
 
 
     // Display a success message
-    Swal.fire(
-        'Order Placed Successfully!',
-        'The order has been saved.',
-        'success'
-    );
+
+    alert("Purchase Successful!!!");
 
     resetBtn.click();
 });
@@ -356,14 +345,14 @@ resetBtn.on("click", function () {
     // Reset the form fields to their initial state
     generateCurrentDate();
     populateCustomerIDs();
-    populateitemIds();
+    populateItemIDs();
     orderId.val(generateOrderId());
     $("#total").val('');       // Reset the total
     $("#discount").val('');    // Reset the discount
     $("#Cash").val('');        // Reset the cash input
     customerName.val('');
     itemName.val('');
-    itemUnitPrice.val('');
+    itemUnititemUnitPrice.val('');
     qtyOnHand.val('');
     total.val('');
     discountInput.val('');
@@ -413,8 +402,8 @@ deleteBtn.on("click", function () {
 
             itemsss.forEach(item => {
                 items.forEach((itemObj) => {
-                    if (itemObj.itemCode === item.itemCode) {
-                        itemObj.itemQTY += item.qtyValue;
+                    if (itemObj.itemId === item.itemId) {
+                        itemObj.itemitemQTY += item.qtyValue;
                     }
                 });
             });
@@ -433,7 +422,7 @@ deleteBtn.on("click", function () {
 });
 
 removeBtn.on("click", function () {
-    let index = itemsss.findIndex(item => item.itemCode === itemIdCB.val());
+    let index = itemsss.findIndex(item => item.itemId === itemIdCB.val());
     itemsss.splice(index, 1);
     populateItemTable();
     resetItemDetails.click();
@@ -450,9 +439,9 @@ $('#item-order-table').on('click', 'tbody tr', function() {
 
     itemIdCB.val(itemCodeValue);
     itemName.val(itemNameValue);
-    itemUnitPrice.val(priceValue);
+    itemUnititemUnitPrice.val(priceValue);
     qtyOnHand.val(qtyOnHandValue);
-    itemQTY.val(qtyValue);
+    itemitemQTY.val(qtyValue);
 
     updateBtn2.prop("disabled", false);
     removeBtn.prop("disabled",false);
@@ -505,15 +494,15 @@ function populateFields(orderIdValue){
             .filter(orderDetail => orderDetail.order_id === orderIdValue)
             .map(orderDetail => {
                 /*Find the corresponding item in the items array*/
-                let item = items.find(item => item && item.itemCode === orderDetail.item_id);
+                let item = items.find(item => item && item.itemId === orderDetail.item_id);
 
                 if (item) {
                     return {
-                        itemCode: item.itemCode,
+                        itemId: item.itemId,
                         itemName: item.itemName,
-                        priceValue: item.itemUnitPrice,
-                        qtyOnHand: item.itemQTY,
-                        qtyValue: orderDetail.itemQTY
+                        priceValue: item.itemUnititemUnitPrice,
+                        qtyOnHand: item.itemitemQTY,
+                        qtyValue: orderDetail.itemitemQTY
                     };
                 } else {
                     /*Handle the case where the item is not found*/
@@ -533,7 +522,7 @@ function populateFields(orderIdValue){
 
     } else {
         /*Show an error message if the order is not found*/
-        showValidationError('Order Not Found', 'The selected order details could not be found.');
+        alert("Order Not Found ! , The selected order details could not be found.");
     }
 }
 
@@ -543,4 +532,3 @@ searchBtn.on("click",function (){
         searchField.val('');
     }
 });
-
