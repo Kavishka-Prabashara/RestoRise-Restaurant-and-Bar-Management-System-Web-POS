@@ -57,6 +57,17 @@ $("#signUpSubmit").on('click', () => {
 
     users.push(user);
 
+    if (user) {
+        alert('SignUp successful!');
+        $('#login-Section').show();
+        $('#signUp-section').hide();
+        $('#dashboard-section').hide();
+        $('#navigation-bar').show();
+        // Proceed with login (e.g., redirect to another page)
+        // window.location.href = "home.html"; // Example redirect
+    } else {
+        alert('Something went wrong!');
+    }
     // Show success message
     alert('Saved Successfully');
 });
