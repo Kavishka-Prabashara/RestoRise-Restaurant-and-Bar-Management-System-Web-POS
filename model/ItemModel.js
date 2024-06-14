@@ -1,12 +1,12 @@
 export default class ItemModel {
-    constructor(supplierId, supplierName, itemCategory, itemId, itemName, itemQTY, itemUnitPrice, suppliedDate) {
+    constructor(supplierId, supplierName, itemCategory, itemId, itemName, itemitemQTY, itemUnititemUnitPrice, suppliedDate) {
         this._supplierId = supplierId;
         this._supplierName = supplierName;
         this._itemCategory = itemCategory;
         this._itemId = itemId;
         this._itemName = itemName;
-        this._itemQTY = itemQTY;
-        this._itemUnitPrice = itemUnitPrice;
+        this._itemitemQTY = itemitemQTY;
+        this._itemUnititemUnitPrice = itemUnititemUnitPrice;
         this._suppliedDate = suppliedDate;
     }
 
@@ -25,11 +25,11 @@ export default class ItemModel {
     get itemName() {
         return this._itemName;
     }
-    get itemQTY() {
-        return this._itemQTY;
+    get itemitemQTY() {
+        return this._itemitemQTY;
     }
-    get itemUnitPrice() {
-        return this._itemUnitPrice;
+    get itemUnititemUnitPrice() {
+        return this._itemUnititemUnitPrice;
     }
     get suppliedDate() {
         return this._suppliedDate;
@@ -49,11 +49,11 @@ export default class ItemModel {
     set itemName(itemName) {
         this._itemName = itemName;
     }
-    set itemQTY(itemQTY) {
-        this._itemQTY = itemQTY;
+    set itemitemQTY(itemitemQTY) {
+        this._itemitemQTY = itemitemQTY;
     }
-    set itemUnitPrice(itemUnitPrice) {
-        this._itemUnitPrice = itemUnitPrice;
+    set itemUnititemUnitPrice(itemUnititemUnitPrice) {
+        this._itemUnititemUnitPrice = itemUnititemUnitPrice;
     }
     set suppliedDate(suppliedDate) {
         this._suppliedDate = suppliedDate;
