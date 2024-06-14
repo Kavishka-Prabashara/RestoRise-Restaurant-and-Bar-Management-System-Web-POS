@@ -8,7 +8,7 @@ function loadTable() {
     staffs.map((staff, index) => {
         console.log(staff);
         let record = `<tr>
-            <td class="staff-id-value">${staff.staffID}</td>
+            <td class="staff-id-value">${staff.staffId}</td>
             <td class="staff-name-value">${staff.staffName}</td>
             <td class="staff-nic-value">${staff.staffNIC}</td>
             <td class="staff-dob-value">${staff.staffDob}</td>
