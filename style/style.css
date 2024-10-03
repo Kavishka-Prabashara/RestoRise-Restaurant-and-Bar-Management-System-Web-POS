@@ -133,4 +133,44 @@ th , td {
     color: #ffffff !important;
 }
 
+/* General form styling */
+#signUp-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+#signUp-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.card {
+    width: 90%; /* Control form width */
+    margin: 0 auto;
+}
+
+@media (max-width: 576px) {
+    /* Hide the image on smaller screens */
+    .d-sm-block {
+        display: none !important;
+    }
+
+    /* Adjust the form to take full width on mobile */
+    #signUp-content {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .card {
+        margin: 10px;
+    }
+
+    .form-control {
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+    }
+}
